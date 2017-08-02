@@ -1,0 +1,823 @@
+.grid-row [class^="grid-column-"] {
+  float: left;
+  margin: 0.5rem 1.5%;
+  min-height: 0.125rem;
+}
+/* Backbone dialog */
+#opalhotel_backbone_modal{
+  background-color: #fff;
+}
+#opalhotel_backbone_modal #container{
+  padding: 10px;
+}
+#opalhotel_backbone_modal *{
+  font-size: 13px;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_overflow{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 360px;
+  background: #000;
+  opacity: .7;
+  z-index: 99900;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  min-width: 500px;
+  max-width: 700px;
+  background: #fff;
+  z-index: 100000;
+  -webkit-transform: translate(0,-25%);
+  transform: translate(0,-25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out,-webkit-transform 0.3s ease-out;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content header{
+  padding: 13px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.42857143px;
+  position: relative;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content footer{
+  padding: 16px;
+  overflow: hidden;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content footer button{
+  float: right;
+  margin: 0px 5px;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content footer.center{
+  text-align: center;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content footer.center button{
+  float: initial;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content header h1{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+#opalhotel_backbone_modal .opalhotel_backbone_modal_content header .opalhotel_button_close{
+  color: #999;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  text-align: center;
+  line-height: 24px;
+  font-size: 14px;
+  font-family: serif;
+  border-radius: 2px;
+}
+#opalhotel-room-pricing h3:focus{
+  outline: none;
+}
+#opalhotel-room-pricing .ui-accordion-header{
+  background: none !important;
+  background-color: #9BAEB7 !important;
+  color: #fff;
+}
+#opalhotel-room-pricing .ui-accordion .ui-accordion-content{
+    /*height: auto !important;*/
+}
+/* Rating */
+.star-wrapper .star{
+  color: #111;
+  font-family: FontAwesome;
+}
+.star-wrapper .star:hover{
+  cursor: pointer;
+}
+.star-wrapper .star:before{
+  content: '\f006';
+}
+.star-wrapper .star.active:before{
+  content: '\f005';
+}
+.comment-rating{
+  position: relative;
+}
+.comment-rating:before{
+  content: '\f006\f006\f006\f006\f006';
+  font-family: Fontawesome;
+}
+.comment-rating span{
+  overflow: hidden;
+  font-family: Fontawesome;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+}
+.comment-rating span:before{
+  display: block;
+  content: '\f005\f005\f005\f005\f005';
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+}
+.opalhotel-room-modal-wrapper .opalhotel-room-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  min-width: 320px;
+  height: auto;
+  z-index: 2000;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.opalhotel-room-modal-wrapper .overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: rgba(80, 74, 73, 0.8);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.opalhotel-room-modal-wrapper.active .opalhotel-room-modal,
+.opalhotel-room-modal-wrapper.active .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.opalhotel-room-modal-wrapper .content {
+  background: #fff;
+  position: relative;
+  border-radius: 3px;
+  margin: 0 auto;
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.opalhotel-room-modal-wrapper .content {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  overflow: hidden;
+}
+.opalhotel-room-modal-wrapper .content h3 {
+  margin: 0;
+  padding: 0.4em;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  background: #a4aae8;
+  border-radius: 3px 3px 0 0;
+}
+
+.opalhotel-room-modal-wrapper .content > div {
+  padding: 15px 40px 30px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.15em;
+}
+
+.opalhotel-room-modal-wrapper .content > div p {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.opalhotel-room-modal-wrapper .content button {
+  display: block;
+  margin: 0 auto;
+  font-size: 0.8em;
+}
+.opalhotel-single-book-room,
+.opalhotel-single-book-room.opalhotel_form_section {
+  padding: 15px;
+  overflow: hidden;
+}
+.opalhotel-single-book-room input{
+  width: 100%;
+}
+.opalhotel-single-book-room button{
+  background-color: #FFF;
+  text-transform: uppercase;
+  border-color: #e4e4e4;
+  border-width: 1px;
+  border-style: solid;
+  color: #333;
+  padding: 7px 20px 7px 12px;
+  font-size: 11px;
+  line-height: 1.2;
+  background-image: none;
+  width: 100%;
+}
+.opalhotel-room-modal-wrapper .opalhotel-available-form,
+.opalhotel-room-modal-wrapper .opalhotel-available-form .room-choose-packages,
+.opalhotel-room-package-wrapper,
+.room-choose-packages .opalhotel-room-package-wrapper .opalhotel-room-package-item + .opalhotel-room-package-item,
+.opalhotel-room-modal-wrapper .clearfix{
+  /*overflow: hidden;*/
+  box-sizing: content-box;
+}
+.opalhotel-room-modal-wrapper .room-choose-packages .opalhotel-room-package-wrapper .opalhotel-room-package-item{
+  padding: 20px;
+  box-sizing: content-box;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* STYLE FOR NEW RATING ELEMENT */
+.opalhotel-review-stars{
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.opalhotel-review-stars li{
+  display: inline-block;
+  float: left;
+  font-size: 13px;
+  color: #febd49;
+}
+
+/* Modal Content */
+.opalhotel-modal .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.opalhotel-jBox .room-box{
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+.opalhotel-jBox .modal-title{
+  font-size: 20px;
+  margin: 0;
+  line-height: 1;
+}
+.room-choose-packages {
+  margin: 0;
+  border: none;
+  width: 100%;
+  float: left;
+}
+.room-actions{
+  position: relative;
+  overflow: hidden;
+}
+.opalhotel-price-day ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.opalhotel-wrapper .opalhotel-pagination,
+.opalhotel-wrapper .count-results{
+  display: inline-block;
+}
+.opalhotel-wrapper .count-results{
+  float: left;
+}
+.opalhotel-wrapper .opalhotel-pagination{
+  float: right;
+}
+.hotel-box .opalhotel-catalog-thumbnail{
+  width: 34%;
+}
+.hotel-box .room-title {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+.hotel-box .room-content{
+  padding: 0;
+}
+.hotel-box .room-meta-info li{
+  width: 50%;
+}
+.opalhotel-btn-group{
+  position: relative;
+}
+.opalhotel-btn-group .btn{
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none !important;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+.opalhotel-btn-group .btn:hover{
+  color: #333;
+}
+.opalhotel-btn-group.sortable{
+  position: relative;
+  float: left;
+}
+.opalhotel-dropdown-menu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0 !important;
+  margin: 2px 0 0 !important;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+  background-clip: padding-box;
+}
+.opalhotel-dropdown-menu.active{
+  display: block;
+}
+.opalhotel-btn-group.layout{
+  float: right;
+}
+.opalhotel-dropdown-menu a{
+  display: block;
+  padding: 3px 10px;
+}
+.opalhotel-dropdown-menu a:hover{
+  background-color: #f4f4f4;
+}
+.opalhotel-available-optional{
+  padding: 10px;
+  border: 1px solid #eee;
+}
+.opalhotel-available-optional .grid-column-3{
+  float: left;
+}
+.opalhotel-before-loop.grid-row{
+  display: block;
+  padding: 5px 20px;
+  margin-bottom: 30px;
+  border: 1px solid #e9e9e9;
+}
+.opalhotel-before-loop.grid-row select{
+  float: left;
+}
+.opalhotel-before-loop.grid-row form{
+  float: right;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Cluster */
+.opalhotel-map-master{
+  position: relative;
+}
+.opalhotel-map-master .cluster{
+  border-radius: 50%;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari */
+  background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 to 15 */
+  background: radial-gradient(circle, red, yellow, green); /* Standard syntax */
+}
+.opalhotel-map-master .cluster > div{
+  color: #fff;
+}
+.opalhotel-map-master .cluster > div:before{
+  content: ' ';
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  position: absolute;
+  z-index: 2;
+  display: block;
+}
+.opalhotel-marker-icon{
+  width: 60px;
+  height: 60px;
+}
+.opalhotel-jBox.jBox-Notice-error .jBox-container{
+  color: #fff;
+  background: #FF5722;
+}
+.opalhotel-jBox.jBox-Notice-warning .jBox-container{
+  color: #fff;
+  background: #EF6C00;
+}
+.opalhotel-jBox.jBox-Notice-success .jBox-container {
+  color: #fff;
+  background: #42A5F5;
+}
+/*MAP*/
+.opalhotel-map-control{
+  user-select: none;
+  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: white;
+  width: 28px;
+  height: 30px;
+  font-size: 0;
+  margin: 10px;
+}
+.opalhotel-map-control a{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+.opalhotel-map-control a i{
+  font-size: 12px;
+  vertical-align: middle;
+  color: #666;
+  font-weight: 400;
+  line-height: 30px;
+}
+.opalhotel-map-control a:hover,
+.opalhotel-map-control a.active{
+  cursor: pointer;
+  background-color: #FFC107;
+  color: #fff;
+}
+.opalhotel-map-control img{
+  width: 100%;
+}
+.opalhotel-map-control.opalhotel-zoom-control {
+  width: 55px;
+  height: 30px;
+}
+.opalhotel-map-control.opalhotel-zoom-control a{
+  width: 50%;
+}
+.opalhotel-map-control.opalhotel-zoom-control a.zoom-out{
+  border-left: 1px solid #dedede;
+}
+.opalhotel-zoom-control a{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+.opalhotel-zoom-control a:hover,
+.opalhotel-zoom-control a:focus{
+  outline: none;
+  box-shadow: none;
+  color: #fff;
+}
+.opalhotel-map-wrapper .opalhotel-map-master .opalhotel-map-countries {
+  background-color: #fff;
+  margin-left: 50px;
+}
+.opalhotel-map-wrapper{
+  padding: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+[class*='si-wrapper'] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.4rem;
+  cursor: default;
+}
+[class*='si-shadow-wrapper'] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: 1;
+}
+[class*='si-shadow-inner-pointer'] {
+  position: absolute;
+  width: 141%;
+  height: 141%;
+  box-shadow: -2.82843px 2.82843px 6px 0 #000;
+}
+[class*='si-shadow-pointer'] {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin: auto;
+}
+[class*='si-pointer-bg'] {
+  position: relative;
+  border: 5px solid transparent;
+  z-index: 4;
+}
+.si-float-wrapper {
+  position: absolute;
+  width: 100%;
+}
+.si-float-wrapper, .si-float-wrapper * {
+  box-sizing: border-box;
+}
+.opalhotel-snazzy-info-window{
+  top: 30px;
+  max-width: 400px;
+  -webkit-transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+}
+.opalhotel-snazzy-info-window.active{
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+.si-wrapper-top {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: -40px;
+  margin-left: 0px;
+  -webkit-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+}
+.opalhotel-snazzy-info-window .si-shadow-wrapper-top,
+.opalhotel-snazzy-info-window .si-shadow-wrapper-bottom {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.opalhotel-snazzy-info-window.open .si-frame{
+  overflow: visible;
+}
+.opalhotel-snazzy-info-window .si-frame {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  border-radius: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+.opalhotel-snazzy-info-window .si-shadow-frame {
+  box-shadow: 0 4px 6px 0 #000;
+}
+.opalhotel-snazzy-info-window .si-shadow-inner-pointer-top {
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.opalhotel-snazzy-info-window .si-content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  background-color: #fff;
+}
+.opalhotel-snazzy-info-window .thumb{
+  height: 84px;
+  float: left;
+  display: block;
+  width: 84px;
+}
+.opalhotel-snazzy-info-window .close {
+  position: absolute;
+  top: 0;
+  padding: 2px;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  -webkit-transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 0;
+  background-color: rgba(68, 67, 62, 0.8);
+  color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  vertical-align: middle;
+}
+.opalhotel-snazzy-info-window .content {
+  position: relative;
+  max-height: inherit;
+  overflow: auto;
+  z-index: 2;
+}
+.opalhotel-snazzy-info-window .header {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  line-height: 1em;
+  font-size: 18px;
+}
+.opalhotel-snazzy-info-window .header a{
+  box-shadow: none;
+}
+.opalhotel-snazzy-info-window small{
+  display: block;
+  font-size: 12px;
+}
+.opalhotel-snazzy-info-window .si-content {
+  overflow: visible;
+}
+.opalhotel-snazzy-info-window .si-content {
+  overflow: auto;
+}
+.opalhotel-snazzy-info-window .si-pointer-top {
+  border-bottom: 0;
+}
+.opalhotel-snazzy-info-window .si-pointer-bg-top {
+  border-top-color: #fff;
+}
+@media (min-width: 992px) {
+  .opalhotel-snazzy-info-window {
+    max-width: 500px;
+  }
+  .opalhotel-snazzy-info-window .content{
+    padding: 10px;
+  }
+}
+.opalhotel-map-countries{
+  background-color: #fff;
+}
+.opalhotel-map-countries.hide ul{
+  display: none;
+}
+.opalhotel-map-countries.fade ul{
+  display: block;
+  opacity: 0;
+}
+.opalhotel-map-countries.fade.in ul{
+  opacity: 1;
+}
+.opalhotel-map-countries ul{
+  margin: 0!important;
+  padding: 0;
+  height: auto;
+  max-height: 215px;
+  max-width: 300px;
+  overflow: auto;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.opalhotel-map-countries ul li{
+  display: inline-block;
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 5px 10px;
+  line-height: 20px;
+  margin: 0 !important;
+  background: 0 0;
+  list-style: none;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer !important;
+}
+.opalhotel-map-countries ul li img{
+  width: 20px;
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+.opalhotel-map-zoom-control{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.opalhotel-before-loop .opalhotel-select{
+  display: block;
+  float: left;
+}
+.opalhotel-select .items{
+  display: block;
+  min-width: 150px;
+}
+.opalhotel-progress-map{
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  margin: auto;
+  bottom: 0px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+}
+.opalhotel-progress-map svg{
+  display: block;
+  width: 100%;
+}
+.opalhotel-single-share{
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.opalhotel-single-share li{
+  width: 25%;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  font-size: 25px;
+}
+.opalhotel-share-content{
+  display: none;
+}
+.opalhotel_hotel .discount{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: block;
+  border-radius: 2px;
+  padding: 5px;
+  background-color: #009fe2;
+  color: #fff;
+  font-size: 11px;
+}
+.opalhotel-loading-container .loading-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -70px;
+  color: #009fe2;
+}
+.opalhotel-loading-container .loading-content span.fa {
+  margin-right: 10px;
+}

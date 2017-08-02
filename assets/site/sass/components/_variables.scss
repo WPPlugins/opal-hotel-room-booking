@@ -1,0 +1,59 @@
+$gray-base       : #000;
+$light-gray      : lighten(#000000, 60%) !default;        // #999999
+$very-light-gray : #e9e9e9 !default;                      // #e9e9e9
+$very-dark-gray  : lighten(#000000, 9%) !default;         // #171717 
+$gray-darker     : #0d292f !default;                      // #0d292f
+$gray-dark       : #666 !default;           			  // #666666
+$gray            : lighten(#000, 33.5%) !default;         // #555555
+$gray-light      : lighten(#000, 46.7%) !default;         // #777777
+$gray-lighter    : lighten(#000, 93.5%) !default;         // #eeeeee
+
+$brand-primary   : #c29b73 !default;
+$brand-success   : #3ab54a !default;
+$brand-info      : #07a5db !default;
+$brand-warning   : #fabd47 !default;
+$brand-danger    : #e74444 !default;
+
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+$border-radius-small:       0px !default;
+
+
+$text-color:            $gray-dark !default;
+
+
+$headings-font-family:    inherit !default;
+/***/
+$font-family-base:        'Lato', sans-serif !default;
+$font-size-base:          16px !default;
+/*
+ * Global variables
+ */
+$image-theme-path                : '../images/' !default;
+$image-theme-skin                : '../images/' !default;
+// standard colors
+$white		    : #FFF !default;
+$black			: #000 !default;
+$nocolor		: transparent !default;
+
+
+// color for default theme
+$theme-color    : #c29b73 !default; /* main color which will be used for all main block styles... */
+$border-color	: #e9e9e9 !default;
+
+
+$theme-color-second  			 : #233354 !default;
+$theme-color-default             : $theme-color !default;
+$theme-color-hover               : #ff8106 !default;
+$theme-color-secondary           : #da8664 !default;
+$link-color                      : #000 !default;
+
+
+// Theme Margin, Padding
+// -------------------------
+$theme-margin    : 30px !default;
+$theme-padding   : 30px !default;
+// fonts
+$font-family-second :  $font-family-base !default; 
+

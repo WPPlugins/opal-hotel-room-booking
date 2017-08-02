@@ -1,0 +1,169 @@
+.button {
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	border: 2px solid #CCC;
+	white-space: nowrap;
+	padding:10px 20px;
+	text-transform:uppercase;
+	background-color: #ddd;
+	&,
+	&:active,
+	&.active {
+		&:focus,
+		&.focus {
+		
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&.focus {
+		color:#FFF;
+		text-decoration: none;
+	}
+
+	&:active,
+	&.active {
+		outline: 0;
+		background-image: none;
+	
+	}
+	&.button-primary-inverse{
+		background:$theme-color;
+		color:$white;
+		border-color:$theme-color;
+	}
+	&.button-primary {
+		letter-spacing: 1px;
+		color: #999;
+		background-color: #fff;
+		&:hover {
+			color: $theme-color;
+			border-color: $theme-color;
+		}
+	}
+	&.button-default{
+		font-weight: 900;
+		font-size: 12px;
+		&:hover {
+			color: #999;
+		}
+	}
+	&.button-theme{
+		color:$white;
+		background-color: $theme-color;
+		border: none;
+		font-size: 14px;
+		line-height: 30px;
+		&:hover {
+			color: $theme-color;
+			border-color: $theme-color;
+			background:$white;
+		}
+	}
+	// [converter] extracted a& to a.btn
+}
+
+
+/**
+ * Default Form Styles
+ */
+.opalhotel-form-field-group{
+	position: relative;
+}
+
+.opalhotel-form-field{
+	padding: 10px 20px;
+}
+
+.opalhotel-form-field label{
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.opalhotel-form-field-group input,
+.opalhotel-form-field-group select,
+.opalhotel-form-field-group button{
+	background-color: #FFF;
+	text-transform: uppercase;
+	border-color: #e4e4e4;
+	border-width: 1px;
+	border-style: solid;
+	color: #333;
+	padding: 7px 20px 7px 12px;
+	font-size: 11px;
+	line-height: 1.2;
+	background-image: none;
+	width: 100%;
+}
+.opalhotel-form-field-group input:focus,
+.opalhotel-form-field-group select:focus{
+	border: 1px solid #9E3515;
+	outline: none;
+}
+.opalhotel-form-field-group i{
+	position: absolute;
+	right: 10px;
+	top: 7px;
+}
+
+.opalhotel-form-group .required{
+	font-size: 11px;
+	color: red;
+}
+.opalhotel-form-group input,
+.opalhotel-form-group input[type="text"],
+.opalhotel-form-group input[type="email"],
+.opalhotel-form-group textarea,
+.opalhotel-form-group select{
+	font-size: 13px;
+	color: #444;
+	background-color: #fff;
+	width: 100%;
+	line-height: 1;
+	padding: 10px;
+	margin-top: 5px;
+	box-sizing: border-box;
+	min-height: 40px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.opalhotel-form-group input[type="text"]::-webkit-input-placeholder,
+.opalhotel-form-group input[type="email"]::-webkit-input-placeholder,
+.opalhotel-form-group input[type="text"]::-moz-input-placeholder,
+.opalhotel-form-group input[type="email"]::-moz-input-placeholder,
+.opalhotel-form-group input[type="text"]:-moz-input-placeholder,
+.opalhotel-form-group input[type="email"]:-moz-input-placeholder,
+.opalhotel-form-group input[type="text"]:-ms-input-placeholder,
+.opalhotel-form-group input[type="email"]:-ms-input-placeholder{
+	font-size: 13px;
+	color: #444;
+	padding: 5px 10px;
+	width: 100%;
+}
+.opalhotel-form-group input{
+	transition: all 0.3s;
+}
+.opalhotel-form-group input[type="text"]:focus,
+.opalhotel-form-group input[type="email"]:focus,
+.opalhotel-form-group textarea:focus,
+.opalhotel-form-group select:focus,
+.opalhotel-form-group .error{
+	border: 1px solid #F5652E;
+	outline: none;
+}
+.opalhotel-form-group .validated{
+	border: 1px solid #69bf29
+}
+.opalhotel-form-group.coupon_section{
+	text-align: right;
+	margin-bottom: 20px;
+}
+

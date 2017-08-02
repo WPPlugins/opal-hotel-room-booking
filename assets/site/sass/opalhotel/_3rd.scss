@@ -1,0 +1,289 @@
+$width: 97%;
+$gutter: 3%;
+$breakpoint-small: 33.75em; // 540px
+$breakpoint-med: 45em; // 720px
+$breakpoint-large: 60em; // 960px
+// Alternate buttons
+// --------------------------------------------------
+
+.pull-left{
+  float:left;
+}
+
+.pull-right{
+  float: right;
+}
+.grid-row {
+  position: relative;
+  width: auto;
+  margin-left:-1.5%;
+  margin-right:-1.5%;
+  
+}
+
+.grid-row .grid-column {
+  float: left;
+  margin: 0.5rem 1.5%;
+  min-height: 0.125rem;
+}
+
+.grid-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.grid-column-1,
+.grid-column-2,
+.grid-column-3,
+.grid-column-4,
+.grid-column-5,
+.grid-column-6,
+.grid-column-7,
+.grid-column-8,
+.grid-column-9,
+.grid-column-10,
+.grid-column-11,
+.grid-column-12 {
+  width: $width;
+}
+
+.grid-column-1-sm { width:($width / 12) - ($gutter * 11 / 12); }
+.grid-column-2-sm { width: ($width / 6) - ($gutter * 10 / 12); }
+.grid-column-3-sm { width: ($width / 4) - ($gutter * 9 / 12); }
+.grid-column-4-sm { width: ($width / 3) - ($gutter * 8 / 12); }
+.grid-column-5-sm { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
+.grid-column-6-sm { width: ($width / 2) - ($gutter * 6 / 12); }
+.grid-column-7-sm { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
+.grid-column-8-sm { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
+.grid-column-9-sm { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
+.grid-column-10-sm { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
+.grid-column-11-sm { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
+.grid-column-12-sm { width: $width; }
+
+@media only screen and (min-width: $breakpoint-med) {
+  .grid-column-1 { width:($width / 12) - ($gutter * 11 / 12); }
+  .grid-column-2 { width: ($width / 6) - ($gutter * 10 / 12); }
+  .grid-column-3 { width: ($width / 4) - ($gutter * 9 / 12); }
+  .grid-column-4 { width: ($width / 3) - ($gutter * 8 / 12); }
+  .grid-column-5 { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
+  .grid-column-6 { width: ($width / 2) - ($gutter * 6 / 12); }
+  .grid-column-7 { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
+  .grid-column-8 { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
+  .grid-column-9 { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
+  .grid-column-10 { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
+  .grid-column-11 { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
+  .grid-column-12 { width: $width; }
+
+}
+ 
+ 
+
+.opalhotel-datpicker{
+    font-family: 'Crimson Text', serif;
+    line-height: 1;
+    color: #444;
+    font-weight: 400;
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 25px rgba(0, 0, 0, 0.1);
+}
+.opalhotel-datpicker .ui-datepicker-header{
+    margin-bottom: 7px;
+    padding: 10px 0;
+    border-bottom: solid 1px #e6e6e6;
+    background-color: transparent;
+    position: relative;
+}
+.opalhotel-datpicker .ui-datepicker-title {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+.opalhotel-datpicker .ui-datepicker-prev,
+.opalhotel-datpicker .ui-datepicker-next{
+    position: absolute;
+    box-shadow: none;
+    top: 3px;
+    padding: 5px;
+    color: #444;
+    font-size: 0;
+}
+.opalhotel-datpicker .ui-datepicker-prev:hover,
+.opalhotel-datpicker .ui-datepicker-next:hover{
+    cursor: pointer;
+    color: #a46796;
+}
+.opalhotel-datpicker .ui-datepicker-next{
+    right: 10px;
+}
+.opalhotel-datpicker .ui-datepicker-next .ui-icon:before{
+    content: '\f101';
+    font-family: FontAwesome;
+    font-size: 16px;
+}
+.opalhotel-datpicker .ui-datepicker-prev .ui-icon:before{
+    content: "\f100";
+    font-family: FontAwesome;
+    font-size: 16px;
+}
+.opalhotel-datpicker .ui-datepicker-prev{
+    left: 10px;
+}
+.opalhotel-datpicker table{
+    margin: 0;
+    border: none;
+    line-height: 1;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.opalhotel-datpicker th{
+    color: #444;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 8px;
+    text-align: center;
+    font-weight: 600;
+    border: 0;
+}
+.opalhotel-datpicker td{
+    padding: 3px;
+    border: none;
+}
+.opalhotel-datpicker .ui-datepicker-prev.ui-state-disabled,
+.opalhotel-datpicker .ui-datepicker-next.ui-state-disabled,
+.opalhotel-datpicker td span,
+.opalhotel-datpicker td span{
+    opacity: 0.3;
+}
+.opalhotel-datpicker td a,
+.opalhotel-datpicker td span{
+    display: block;
+    color: #444;
+    padding: 7px;
+    text-align: center;
+    border: solid 1px #e6e6e6;
+    background-color: transparent;
+    box-shadow: none;
+}
+.opalhotel-datpicker td a:hover,
+.opalhotel-datpicker td a:focus,
+.opalhotel-datpicker td.ui-state-highlight a,
+/*.opalhotel-datpicker td.ui-datepicker-today a,*/
+.opalhotel-datpicker td .ui-state-active{
+    border-color: #9E3515;
+}
+.ui-datepicker-current-day a.ui-state-active{
+    /*border-color: transparent;*/
+}
+
+.noUi-target, .noUi-target * {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-ms-touch-action: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+.noUi-target {
+	position: relative;
+	direction: ltr
+}
+.noUi-base {
+	width: 100%;
+	height: 100%;
+	position: relative
+}
+.noUi-origin {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 0;
+	bottom: 0
+}
+.noUi-handle {
+	position: relative;
+	z-index: 1
+}
+.noUi-stacking .noUi-handle {
+	z-index: 10
+}
+.noUi-state-tap .noUi-origin {
+	-webkit-transition: left .3s, top .3s;
+	transition: left .3s, top .3s
+}
+.noUi-state-drag * {
+	cursor: inherit!important
+}
+.noUi-base {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+}
+.noUi-horizontal {
+	height: 6px;
+	border-radius: 3px;
+}
+.noUi-horizontal .noUi-handle {
+	height:18px;
+	width:18px;
+	left: 0px;
+	top: -6px;
+	&.noUi-handle-upper {
+		@include rtl-margin-left(-18px);
+	}
+}
+.noUi-vertical {
+	width: 18px
+}
+.noUi-vertical .noUi-handle {
+	width: 28px;
+	height: 34px;
+	left: -6px;
+	top: -17px
+}
+.noUi-background {
+	background: #dadada;
+	border-radius: 3px;
+}
+.noUi-connect {
+	background: $theme-color;
+	border-radius: 3px;
+}
+.noUi-origin {
+}
+.noUi-target {
+}
+.noUi-target.noUi-connect {
+}
+.noUi-dragable {
+	cursor: w-resize
+}
+.noUi-vertical .noUi-dragable {
+	cursor: n-resize
+}
+.noUi-handle {
+	border-radius: 50%;
+	background: #FFF;
+	cursor: default;
+}
+.noUi-active {
+	box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB
+}
+.noUi-handle:after, .noUi-handle:before {
+}
+.noUi-handle:after {
+}
+.noUi-vertical .noUi-handle:after, .noUi-vertical .noUi-handle:before {
+}
+.noUi-vertical .noUi-handle:after {
+}
+[disabled] .noUi-connect, [disabled].noUi-connect {
+	background: #B8B8B8
+}
+[disabled] .noUi-handle {
+	cursor: not-allowed
+}
